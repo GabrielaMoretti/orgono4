@@ -3,22 +3,38 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react-icons": "^2.0.309",
+    "lucide-react": "^0.373.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "react-flow-renderer": "^11.10.5",
-    "lucide-react": "^0.373.0"
+    "react-select": "^5.10.2",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
-    "typescript": "^4.9.5",
-    "tailwindcss": "^3.2.4",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

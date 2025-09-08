@@ -1,28 +1,25 @@
+import { useWorkspace } from "./state/WorkspaceContext";
 import React, { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { Gallery } from "./components/Gallery";
-import { WhiteboardBoard } from "./components/WhiteboardBoard";
+import CollaboratorPanel from "./components/CollaboratorPanel";
+import ProjectPanel from "./components/ProjectPanel";
+import WhiteboardBoard from "./components/WhiteboardBoard";
+import Whiteboard from "./components/Whiteboard";
 import { WhiteboardGallery } from "./components/WhiteboardGallery";
-import { useWorkspace } from "./state/WorkspaceContext";
 
 export default function App() {
-  const { selectedSection } = useWorkspace();
+  const { selectedSection, colaboradores } = useWorkspace();
   const [selectedWhiteboardId, setSelectedWhiteboardId] = useState<string | null>(null);
 
   let content;
   if (selectedSection === "Whiteboards") {
-    if (selectedWhiteboardId) {
-      content = (
-        <WhiteboardBoard
-          whiteboardId={selectedWhiteboardId}
-          onBack={() => setSelectedWhiteboardId(null)}
-        />
-      );
-    } else {
-      content = (
-        <WhiteboardGallery onSelect={setSelectedWhiteboardId} />
-      );
-    }
+    // Para testar o novo whiteboard moderno, mostre sempre o novo componente
+    content = <Whiteboard />;
+  } else if (selectedSection === "Colaboradores") {
+    content = <CollaboratorPanel />;
+  } else if (selectedSection === "Projetos") {
+  content = <ProjectPanel />;
   } else {
     content = <Gallery />;
   }

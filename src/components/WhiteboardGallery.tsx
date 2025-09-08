@@ -2,7 +2,7 @@ import React from "react";
 import { whiteboards } from "../data/mockData";
 import { LayoutDashboard } from "lucide-react";
 
-export function WhiteboardGallery({ onSelect }: { onSelect: (id: string) => void }) {
+function WhiteboardGallery({ onSelect }: { onSelect: (id: string) => void }) {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Whiteboards</h1>
@@ -21,3 +21,5 @@ export function WhiteboardGallery({ onSelect }: { onSelect: (id: string) => void
     </div>
   );
 }
+
+export default WhiteboardGallery;
